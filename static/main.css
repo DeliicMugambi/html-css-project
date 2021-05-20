@@ -2,7 +2,7 @@
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
     url("/images/freedom.jpg") center / cover no-repeat border-box, #ff1b68;
   width: 100vw;
-  height: 33vh;
+  height: 34vh;
   margin-top: 2.75rem;
   position: relative;
 }
@@ -15,7 +15,7 @@
   left: 3%;
   font-size: 1.6rem;
 }
-@media (min-width: 40rem) and (orientation: portrait) {
+@media (min-width: 40rem) and (min-height: 40rem) {
   #product-overview {
     height: 40vh;
     background-position: 50% 25%;
@@ -65,11 +65,11 @@
   color: #858585;
 }
 
-.plan--highlighted .plan__title {
+.recommended-plan .plan__title {
   color: white;
 }
 
-.plan--highlighted .plan__price {
+.recommended-plan .plan__price {
   color: #0e4f1f;
 }
 
@@ -85,18 +85,24 @@
 @media (min-width: 40rem) {
   .plan__list {
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .plan {
-    display: inline-block;
     width: 30%;
-    vertical-align: middle;
-    min-width: 206px;
-    max-width: 229px;
+    min-width: 12rem;
+    max-width: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28rem;
   }
   .recommended-plan {
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    height: 30rem;
+    z-index: 50;
   }
 }
 #key-features {
@@ -135,10 +141,12 @@
 }
 @media (min-width: 40rem) {
   .key-feature {
-    display: inline-block;
     width: 30%;
     min-width: 206px;
-    vertical-align: top;
+  }
+  .key-feature__list {
+    display: flex;
+    justify-content: center;
   }
 }
 .modal {

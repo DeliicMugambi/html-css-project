@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+
+main {
+  min-height: calc(100vh - 3.5rem - 8rem);
+}
 html {
   height: 100%;
 }
@@ -26,12 +30,10 @@ body {
   left: 0;
   position: fixed;
   width: 100%;
-  z-index: 1;
-}
-
-.main-header > div {
-  display: inline-block;
-  vertical-align: middle;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .toggle-button {
   width: 3rem;
@@ -62,25 +64,18 @@ body {
 
 .main-header__brand {
   color: #0e4f1f;
-  font-size: 1.5rem;
-  vertical-align: middle;
-  display: inline-block;
-  height: 1.5rem;
 }
 .main-header__brand img {
-  height: 100%;
+  height: 2.5rem;
+  vertical-align: middle;
 }
 
 .main-nav {
   display: none;
-  text-align: right;
-  width: calc(100% - 122px);
 }
 @media (min-width: 40rem) {
   .main-nav {
-    display: inline-block;
-    text-align: right;
-    width: calc(100% - 122px);
+    display: flex;
   }
 }
 
@@ -89,10 +84,10 @@ body {
   padding: 0;
   list-style-type: none;
   padding: 1.3rem;
+  display: flex;
 }
 
 .main-nav__item {
-  display: inline-block;
   margin: 0px 1rem;
 }
 
@@ -142,9 +137,12 @@ mobile-nav__item--cta a:active {
   width: 90%;
   height: 100%;
   list-style: none;
-  margin: 10% auto;
+  margin: 0 auto;
   padding: 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-nav__item {
@@ -185,12 +183,13 @@ button:focus {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-/* .main-footer__link {
-  display: inline-block;
-  margin: 0 1rem;
-} */
+.main-footer__link {
+  margin: 0.5rem 0;
+}
 .main-footer__link a {
   color: white;
   text-decoration: none;
@@ -202,8 +201,12 @@ button:focus {
 }
 @media (min-width: 40rem) {
   .main-footer__link {
-    display: inline-block;
     margin: 0 1rem;
+  }
+  .main-footer__links {
+    flex-direction: row;
+    justify-content: center;
+    /* vertical-align: middle; */
   }
 }
 .open {
